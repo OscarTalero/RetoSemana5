@@ -1,7 +1,5 @@
 RetoSemana5
 Descripción del Reto
-Llego el momento de que el departamento de prácticas académicas de una de las universidades 
-extranjeras con las que se ha contratado, tenga una aplicación para registrar los datos.
 
 Al departamento se le pasa una lista con todos los códigos de identificación de los estudiantes
 que se han postulado a prácticas en el periodo 2021-2 (2021 - Segundo semestre). A pesar de que 

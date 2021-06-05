@@ -3,7 +3,6 @@ import funciones as func
 
 lista_postulados = [11,22,33]
 cola = deque()
-lista_est = []
 op = 'S'
 while op == 'S':
     estudiante = int(input('Ingrese estudiante: '))

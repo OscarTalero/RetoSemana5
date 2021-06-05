@@ -1,21 +1,22 @@
 import datetime
+from collections import deque
 
-def validar(lista_postulados, estudiante,lista_est):
+def validar(lista_postulados, estudiante,cola):
     if estudiante in lista_postulados:
         print('Estudiante ',estudiante,'se encuentra en la lista')
-        if lista_est:
-            if lista_est[0][0] == estudiante:
+        if cola:
+            if cola[0][0] == estudiante:
                 print("Ya inscrito")
             else:
-                lista_est =inscribir(estudiante,lista_est)
+                cola =inscribir(estudiante,cola)
         else:
-            lista_est = inscribir(estudiante,lista_est)
+            cola = inscribir(estudiante,cola)
     else:
         print('Estudiante',estudiante,' no se encuentra postulado')
-    print(lista_est)
-    return lista_est
+    print(cola)
+    return cola
 
-def inscribir(estudiante,lista_est):
+def inscribir(estudiante,cola):
     print('Ingrese los datos del estudiante :')
     codigo = estudiante   
     print('Codigo: ',codigo)
@@ -39,5 +40,5 @@ def inscribir(estudiante,lista_est):
             op = False
         fecha = datetime.datetime.today()
     estudiantes = [codigo,identificacion,nombre,edad,programa,fecha]
-    lista_est.append(estudiantes)
-    return lista_est
+    cola.append(estudiantes)
+    return cola

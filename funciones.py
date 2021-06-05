@@ -1,5 +1,5 @@
 import datetime
-from collections import deque
+#from collections import deque
 
 def validar(lista_postulados, estudiante,cola):
     if estudiante in lista_postulados:

@@ -1,7 +1,19 @@
 import datetime
-#from collections import deque
+
 
 def validar(lista_postulados, estudiante,cola):
+    '''Funcion que valida si el estudiante esta postulado o inscrito
+    
+    Parametros
+    ----------
+    lista_postulados : lista
+    estudiante : int
+    cola : cola
+
+    Retorna
+    -----------
+    Retorna la cola con los estudiantes inscritos y sus datos
+    '''
     if estudiante in lista_postulados:
         print('Estudiante ',estudiante,'se encuentra en la lista')
         if cola:
@@ -12,18 +24,30 @@ def validar(lista_postulados, estudiante,cola):
         else:
             cola = inscribir(estudiante,cola)
     else:
-        print('Estudiante',estudiante,' no se encuentra postulado')
-    print(cola)
+        print('Estudiante',estudiante,' no se encuentra en la lista')
+        cola = inscribir(estudiante,cola)
     return cola
 
+
 def inscribir(estudiante,cola):
+    '''Funcion que inscribe a los estudiantes en un programa de la universidad
+
+    Parametros
+    ----------
+    estudiante : int
+    cola : cola
+
+    Retorna
+    ----------
+    cola con los estudiantes inscritos
+    '''
     print('Ingrese los datos del estudiante :')
     codigo = estudiante   
-    print('Codigo: ',codigo)
+    print('Ingrese el codigo: ',codigo)
     identificacion = int(input('Ingrese la identificacion: '))
     nombre = input('Ingrese el nombre: ')
-    edad = input('Ingresese la edad: ')
-    print('Seleccione el programa al que desea inscibirse')
+    edad = int(input('Ingresese la edad: '))
+    print('Seleccione el programa al que desea inscribirse' )
     print('1. Ingenieria Civil')
     print('2. Ingenieria de Sistemas')
     print('3. Ingenieria Electronica')
@@ -37,6 +61,7 @@ def inscribir(estudiante,cola):
     if opcion == 3 :
         programa = 'Ingenieria Electronica'
     fecha = datetime.datetime.today()
+    fecha = fecha.strftime('%d %B %Y %H:%M:%S')
     estudiantes = [codigo,identificacion,nombre,edad,programa,fecha]
     cola.append(estudiantes)
     return cola
